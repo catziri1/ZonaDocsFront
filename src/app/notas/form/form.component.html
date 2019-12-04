@@ -6,7 +6,7 @@
                 <a>Titulo:</a>
             </div>
             <div class="col-2">
-                <input>
+                <input name="titulo">
             </div>
         </div>
         <div class="row">
@@ -14,7 +14,7 @@
                 <a>Autor(es):</a>
             </div>
             <div class="col-2">
-                <input>
+                <input name="autor">
             </div>
         </div>
         <div class="row">
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="row2">
-            <textarea></textarea>
+            <textarea name="entrada"></textarea>
         </div>
         <br>
         <div class="row">
@@ -43,31 +43,37 @@
             </div>
         </div>
         <div class="row2">
-                <textarea></textarea>
+                <textarea name="nota"></textarea>
         </div>
         <br>
-        <div class="row">
-            <div class="col">
-                <a>Imágenes:</a>
+        <div class="fotos">
+            <div class="row">
+                <div class="col">
+                    <a>Imágenes:</a>
+                </div>
+                <div class="col-2">
+                    <input type="file"
+                    accept="image/*" multiple>            
+                </div>
             </div>
-            <div class="col-2">
-                <input type="file"
-                accept="image/*" multiple>            
+            <br>
+            <div class="row">
+                <div class="col">
+                    <a>Pie de foto:</a>
+                </div>
+                <div class="col">
+                    <input name="pie de foto">
+                </div>
+                <div class="col">
+                        <input type="radio" name="portada">
+                    </div>
+                <div class="col">
+                    <a>Elegir&nbsp;esta&nbsp;como&nbsp;foto&nbsp;de&nbsp;portada</a>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <a>Pie de foto:</a>
-            </div>
-            <div class="col">
-                <input>
-            </div>
-            <div class="col">
-                    <input type="radio">
-                </div>
-            <div class="col">
-                <a>Elegir&nbsp;esta&nbsp;como&nbsp;foto&nbsp;de&nbsp;portada</a>
-            </div>
+            <button name="publicar">Publicar</button>
         </div>
     </div>
 </div>
