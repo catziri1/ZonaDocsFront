@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { NotasService } from '../notas.service';
+import { Categoria } from '../notas';
 
 
 @Component({
@@ -7,10 +8,21 @@ import { HttpClient } from '@angular/common/http'
   templateUrl: './crear-nota.component.html',
   styleUrls: ['./crear-nota.component.css']
 })
-export class CrearNotaComponent implements OnInit {
 
-  constructor(private httpClient:HttpClient) { }
+
+export class CrearNotaComponent implements OnInit {
+  categorias:Categoria= {
+    nombre: ''
+  };
+  constructor(    
+    private notasService:NotasService
+    ) { }
   ngOnInit() {
   }
-  
+  getCategoriasPublicion() {
+    this.notasService.getCategoriasPublicion().then(response => {
+      console.log('Response: ', response);
+      this.categorias = response;
+    });
+  }
 }
