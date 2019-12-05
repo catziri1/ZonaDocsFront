@@ -7,9 +7,11 @@ import { NotasComponent } from './notas/notas.component';
 import { NotaCardComponent } from './notas/nota-card/nota-card.component';
 
 const adminRoutes: Routes = [
+
   {path: '', component: AdminLoginComponent},
-  {path: '**', component: NotFoundComponent},
-  {path: 'notas', component: NotasComponent}
+  {path: 'notas', component: NotasComponent},
+  {path: '**', component: NotFoundComponent}
+
 
 ];
 
