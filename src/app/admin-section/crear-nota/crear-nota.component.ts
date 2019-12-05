@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { NotasService } from '../notas.service';
-import { Categoria } from '../notas';
+import { Categoria } from '../nota';
 
 
 @Component({
