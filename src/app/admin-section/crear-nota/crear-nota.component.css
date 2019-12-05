@@ -1,0 +1,73 @@
+.container{
+    font-family: Lora;
+    font-size: 12px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.content{
+    width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-family: Lora;
+    font-size: 15px;
+    background: #E5E5E5;
+}
+.row{
+    width: 100%;
+    height: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+}
+.row2{
+    width: 100%;
+    height: 60px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    vertical-align: middle;   
+}
+.col{
+    width: 20%;
+    float: left;
+}
+.col-2{
+    width: 80%;
+    float: left;
+}
+
+input{
+    width: 100%;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    background: #E5E5E5;
+    border-bottom-color:#000000;
+    border-bottom-width: .5px;
+}
+select{
+    width: 50%;
+}
+
+textarea{
+    width: 100%;
+    height: 50px;
+}
+
+button{
+    font-family: Lora;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid #004FAE;
+    background: #E5E5E5;
+    margin-left: 90%;
+}
+
+.fotos{
+    display:none;
+}
