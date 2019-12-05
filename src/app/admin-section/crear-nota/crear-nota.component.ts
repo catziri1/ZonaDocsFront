@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+
 
 @Component({
   selector: 'app-crear-nota',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearNotaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   ngOnInit() {
   }
-
+ /*  getCategorias():Promise<any> {
+    const url = "https://zona-docs-api.herokuapp.com/categoriasPublicacion";
+    return this.httpClient.get(url).toPromise();
+  } */
 }
