@@ -10,11 +10,7 @@ import { HttpClient } from '@angular/common/http'
 export class CrearNotaComponent implements OnInit {
 
   constructor(private httpClient:HttpClient) { }
-
   ngOnInit() {
   }
- /*  getCategorias():Promise<any> {
-    const url = "https://zona-docs-api.herokuapp.com/categoriasPublicacion";
-    return this.httpClient.get(url).toPromise();
-  } */
+  
 }

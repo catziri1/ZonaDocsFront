@@ -23,8 +23,8 @@
                     <a>Categoría:</a>
                 </div>
                 <div class="col-2">
-                    <select>
-                        <option></option>
+                    <select *ngFor="let item of categorias">
+                        <option [routerLink]="item.id">{{item.nombre}}</option>
                     </select>                
                 </div>
             </div>
