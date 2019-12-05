@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NotasComponent } from './notas/notas.component';
 import { NotaCardComponent } from './notas/nota-card/nota-card.component';
 import { HeaderComponent } from './header/header.component';
+import { CookieService } from 'ngx-cookie-service';
 
 const adminRoutes: Routes = [
   {path: '', component: AdminLoginComponent},
@@ -21,6 +22,7 @@ const adminRoutes: Routes = [
     RouterModule.forChild(adminRoutes),
     CommonModule
   ],
+  providers: [ CookieService ],
   exports: [RouterModule]
 })
 export class AdminSectionModule { }

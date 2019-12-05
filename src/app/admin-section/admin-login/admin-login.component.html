@@ -2,6 +2,7 @@
 <div class="aligner">
     <div class="loginForm">
         <div class="title">Login</div>
+        <div *ngIf="wrongLogin">Email o contraseña incorrectos</div>
         <div class="row">
             <div class="title">Email</div>
             <input type="text">
@@ -11,7 +12,7 @@
             <input type="text">
         </div>
         <div class="row">
-            <div class="btn">Ingresar</div>
+            <div class="btn" (click)="handleLoginClick()">Ingresar</div>
         </div>
     </div>
 </div>
