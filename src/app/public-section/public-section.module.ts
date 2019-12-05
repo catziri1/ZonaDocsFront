@@ -6,7 +6,8 @@ import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 
 const publicRoutes: Routes = [
-  {path: '', component: IndexComponent},
+  {path: '', component: IndexComponent, pathMatch: 'full'},
+  {path: '/notas/:id', component: NotFoundComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
