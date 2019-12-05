@@ -8,7 +8,10 @@ import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 
 const routes: Routes = [
   {path: '', component: AdminLoginComponent},
-  {path: 'notas', component: NotasComponent}
+  {path: 'notas', component: NotasComponent},
+  {path: 'notas/nueva', component: CrearNotaComponent},
+  {path: 'notas/:id/editar', component: CrearNotaComponent}
+
 ];
 
 @NgModule({
