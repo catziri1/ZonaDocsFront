@@ -1,0 +1,26 @@
+.header{
+    padding: 0px 20px;
+    background-color: #100101;
+    display: flex;
+}
+
+.header > .logo{
+    flex: 1;
+}
+
+.header > .logo > img{
+    height: 70px;
+}
+
+.header > .socials{
+    display: flex;
+    align-items: center;
+}
+
+.header > .socials > .social:nth-last-child(n+2){
+    margin-right: 10px;
+}
+
+.header > .socials > .social > img{
+    height: 30px;
+}

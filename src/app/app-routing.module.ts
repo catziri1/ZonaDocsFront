@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { PublicSectionModule } from '../app/public-section/public-section.module';
+import { AdminSectionModule } from '../app/admin-section/admin-section.module';
 
 
 const routes: Routes = [
-  {path: 'admin', loadChildren: '../app/admin-section/admin-section.module#AdminSectionModule'},
-  {path: '**', component: NotFoundComponent}
+  {path: 'admin', loadChildren: () => AdminSectionModule},
+  {path: '**', loadChildren: () => PublicSectionModule}
 ];
 
 @NgModule({
