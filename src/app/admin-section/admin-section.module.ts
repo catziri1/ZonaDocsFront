@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { NotasComponent } from './notas/notas.component';
 import { NotaCardComponent } from './notas/nota-card/nota-card.component';
+import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 
 const routes: Routes = [
   {path: '', component: AdminLoginComponent},
@@ -11,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AdminLoginComponent, NotasComponent, NotaCardComponent],
+  declarations: [AdminLoginComponent, NotasComponent, NotaCardComponent, CrearNotaComponent],
   imports: [
     RouterModule.forChild(routes),
     CommonModule
