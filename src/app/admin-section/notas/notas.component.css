@@ -1,0 +1,57 @@
+.text-card{
+    font-family: 'Lora', serif;
+}
+.content-styling{
+    margin:5em;
+}
+.All-container {
+    margin:0;
+}
+.input-container{
+    margin-left:2em;
+    margin-bottom: 1em;
+    font-family: 'Lora', italic;
+    display:flex
+}
+
+input[type='text']{
+    font-size:20px;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Lora', italic;
+    font-size: 20px;
+  }
+
+.card{
+    width: 180px;
+    height: 200px;
+    margin: 15px;
+
+    background-color: #F1EFEF;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.header-card{
+    
+}
+
+.text-card{
+    padding: 10px;
+}
+
+.field_fecha{
+    padding: 5px
+}
+
+.espacio {
+    width: 5px
+}
+
+.notastitulo {
+    font-family: 'Averia Sans Serif';
+    font-size: 30px;
+}

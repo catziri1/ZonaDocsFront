@@ -1,0 +1,36 @@
+.pageContent{
+    padding: 40px;
+}
+.notasCategoria:nth-last-child(n+2){
+    margin-bottom: 40px;
+}
+.notasCategoria > .titulo{
+    font-size: 25px;
+    display: inline-block;
+    border-bottom: 3px solid #004FAE;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    padding-right: 120px;
+}
+.notasCategoria > .notas{
+    display: flex;
+    flex-wrap: wrap;
+}
+.notasCategoria > .notas > .nota{
+    max-width: 25%;
+    max-width: 25%;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.notasCategoria > .notas > .nota > .titulo{
+    padding: 10px;
+    background-color: #F1EFEF;
+}
+.notasCategoria > .notas > .nota > .imagen{
+    display: flex;
+}
+.notasCategoria > .notas > .nota > .imagen > img{
+    max-width: 100%;
+    max-height: 150px;
+}
