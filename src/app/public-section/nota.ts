@@ -7,8 +7,3 @@ export interface Nota {
         nota: string;
         fecha?: string;
 }
-
-export interface Categoria {
-        id?:number;
-        nombre:string;
-}

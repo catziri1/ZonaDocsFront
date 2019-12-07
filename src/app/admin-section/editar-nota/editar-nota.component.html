@@ -7,7 +7,7 @@
                     <a>Titulo:</a>
                 </div>
                 <div class="col-2">
-                    <input name="titulo">
+                    <input name="titulo">{{nota.titulo}}
                 </div>
             </div>
             <div class="row">
@@ -15,7 +15,7 @@
                     <a>Autor(es):</a>
                 </div>
                 <div class="col-2">
-                    <input name="autor">
+                    <input name="autor">{{autor.nombre}}
                 </div>
             </div>
             <div class="row">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row2">
-                <textarea name="entrada"></textarea>
+                <textarea name="entrada">{{nota.entrada}}</textarea>
             </div>
             <br>
             <div class="row">
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="row2">
-                    <textarea name="nota"></textarea>
+                    <textarea name="nota">{{nota.nota}}</textarea>
             </div>
             <br>
             <div class="fotos">
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="row">
-                <button type="submit" name="publicar" [routerLink]="notaid">Publicar</button>
+                <button type="submit" name="guardar" [routerLink]="notaid">Guardar</button>
             </div>
         </div>
     </div>
