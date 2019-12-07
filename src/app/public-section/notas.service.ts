@@ -11,6 +11,6 @@ export class NotasService {
   constructor(private httpClient:HttpClient) { 
   }
 
-  getPublicacionesByCategoria():Promise<any>{
-  }
+  /*getPublicacionesByCategoria():Promise<any>{
+  }*/
 }
