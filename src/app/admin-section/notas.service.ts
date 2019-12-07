@@ -17,7 +17,6 @@ export class NotasService {
   }
 
   getNotas(): Promise<any> {
-    console.log('todos los parametros?');
     const url = environment.apiUrl + 'publicaciones';
     return this.httpClient.get(url).toPromise();
   }

@@ -20,6 +20,11 @@
             <input type="text" name="fname" placeholder="DD/MM/YYYY" class="field_fecha">
         </div>
         <br>
-        
+        <div class="nota" *ngFor="let nota of notas" routerLink="/notas/{{nota.id}}">
+            <div class="imagen">
+                <img src="https://aristeguinoticias.com/wp-content/uploads/2019/12/centro-de-rehabilitacion-internos-anexo-irapuato-guanajuato-04122019-600x274.jpg">
+            </div>
+            <div class="titulo">{{nota.titulo}}</div>
+        </div>
     </div>
 </div>
