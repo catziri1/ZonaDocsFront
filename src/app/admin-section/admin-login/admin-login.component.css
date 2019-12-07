@@ -1,0 +1,22 @@
+.aligner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: -webkit-fill-available;
+}
+.loginForm > .title{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginForm > .row:nth-last-child(n+2){
+    margin-bottom: 10px;
+}
+.loginForm > .row > .title{
+    font-weight: bold;
+}
+
+.loginForm > .row > input{
+    margin-top: 5px;
+}
+

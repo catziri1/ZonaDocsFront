@@ -1,0 +1,13 @@
+.header{
+    padding: 5px 20px;
+    background-color: #100101;
+    display: flex;
+}
+
+.header > .logo{
+    flex: 1;
+}
+
+.header > .logo > img{
+    height: 70px;
+}

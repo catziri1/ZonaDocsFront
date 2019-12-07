@@ -13,13 +13,12 @@ import { EditarNotaComponent } from './editar-nota/editar-nota.component';
 
 
 const adminRoutes: Routes = [
-
   {path: '', component: AdminLoginComponent},
-  {path: '**', component: NotFoundComponent},
+  {path: 'login', component: AdminLoginComponent},
   {path: 'notas', component: NotasComponent,canActivate: [AuthGuard]},
   {path: 'notas/nueva', component: CrearNotaComponent,canActivate: [RoleGuard], data: { expectedRole: ['periodista']}},
-  {path: 'notas/:id/editar', component: EditarNotaComponent,canActivate: [RoleGuard], data: { expectedRole: ['admin','pariodista']}}
-
+  {path: 'notas/:id/editar', component: EditarNotaComponent,canActivate: [RoleGuard], data: { expectedRole: ['admin','pariodista']}},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -28,6 +27,7 @@ const adminRoutes: Routes = [
     RouterModule.forChild(adminRoutes),
     CommonModule
   ],
+  providers: [ CookieService ],
   exports: [RouterModule]
 })
 export class AdminSectionModule { }
