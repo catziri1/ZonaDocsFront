@@ -24,6 +24,7 @@
                 </div>
                 <div class="col-2">
                     <select *ngFor="let item of categorias">
+                        <option value="" selected disabled hidden>{{categoria.nombre}}</option>
                         <option>{{item.nombre}}</option>
                     </select>                
                 </div>
