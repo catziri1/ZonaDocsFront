@@ -17,4 +17,13 @@ export class LoginService {
     };
     return this.httpClient.post(environment.apiUrl+'login', {email, password}, httpOptions).toPromise();
   }
+
+  checkIfLogged(): boolean{
+    let token = localStorage.getItem('token');
+    if(token != null){
+      return true;
+    }else{
+      return false;
+    }
+  }
 }
