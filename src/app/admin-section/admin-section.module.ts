@@ -11,9 +11,6 @@ import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RoleGuard } from './guards/role.guard';
 import { EditarNotaComponent } from './editar-nota/editar-nota.component';
-import { CookieService } from 'ngx-cookie-service';
-import { HeaderComponent } from '../public-section/header/header.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
