@@ -11,7 +11,11 @@ export class AdminLoginComponent implements OnInit {
   emailInput: string = "";
   passwordInput: string = "";
   wrongLogin: boolean = false;
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router) { 
+    if(loginService.checkIfLogged){
+      this.router.navigate(['admin/notas']);
+    }
+  }
 
   ngOnInit() {
   }
