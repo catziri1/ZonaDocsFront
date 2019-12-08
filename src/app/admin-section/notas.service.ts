@@ -1,21 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 
 import { Nota } from './nota';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 
-const t = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidGlwb1VzdWFyaW8iOjAsImlhdCI6MTU3NTUzNjUwMH0.uMB7taOGVqj2rhqGOAORO0LxQOv5E-I-LP08PcWz7ek';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    //'Authorization' : t,
-    'x-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidGlwb1VzdWFyaW8iOjAsImlhdCI6MTU3NTUzNjUwMH0.uMB7taOGVqj2rhqGOAORO0LxQOv5E-I-LP08PcWz7ek'
-  })
-};
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidGlwb1VzdWFyaW8iOjAsImlhdCI6MTU3NTczOTQyMX0.Ri6QS1me34lnkC5b7lu7NLv_oSScOD0vGRO5rP1tOAM';
 
 @Injectable({
   providedIn: 'root'
@@ -23,31 +13,51 @@ const httpOptions = {
 
 export class NotasService {
 
-  constructor(private httpClient:HttpClient) {
+  constructor(private httpClient: HttpClient) {
     }
 
-  getCategoriasPublicacion(): Observable<any> {
-    const url = environment.apiUrl +"categoriasPublicacion";
-    return this.httpClient.get<Nota[]>(url, httpOptions).pipe();
+  getCategoriasPublicacion(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
+    const url = environment.apiUrl + 'categoriasPublicacion';
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
-  getNotas(): Observable<any> {
-    const url = environment.apiUrl + 'public/publicaciones';
-    /*const url = environment.apiUrl + 'publicaciones';
-    return this.httpClient.get<Nota[]>(url, httpOptions).pipe();*/
-    return this.httpClient.get<Nota[]>(url).pipe();
+  getNotas(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
+    const url = environment.apiUrl + 'publicaciones';
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
-  getNotasByUser(usuarioId: number): Observable<Nota[]>{
-    const url = environment.apiUrl + 'public/publicaciones?usuarioId=' + usuarioId;
-    return this.httpClient.get<Nota[]>(url).pipe();
+  getNotasByUser(usuarioId: number): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
+    const url = environment.apiUrl + 'publicaciones?usuarioId=' + usuarioId;
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
   getNotaDetail(id: number): Promise<any> {
-    console.log('traer UN estudiante');
-    // const url = this.apiUrl + '/'+id;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
     const url = `${environment.apiUrl}publicaciones/${id}`;
-    return this.httpClient.get(url).toPromise();
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
   filterNota(fechaInicio: string,
@@ -57,6 +67,12 @@ export class NotasService {
              orderBy: number,
              Limit: number,
              Offset: number): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
     let parametros = '';
     parametros = ('?' + fechaInicio != null ? 'fechaInicio=' + fechaInicio + '&' : '')
                       + (fechaFin != null ? 'fechaFin=' + fechaFin + '&' : '')
@@ -66,31 +82,51 @@ export class NotasService {
                       + (Limit != null ? 'Limit=' + Limit + '&' : '')
                       + (Offset != null ? 'Offset=' + Offset: '');
     let url = `${environment.apiUrl}publicaciones/${parametros}`;
-    return this.httpClient.get<Nota[]>(url, httpOptions).toPromise();
+    return this.httpClient.get(url, httpOptions).toPromise();
   }
 
-  createNota(nota: Nota): Observable<any>  {
-    //   this.students.push(student);
+  createNota(nota: Nota): Promise<any>  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
     let url = `${environment.apiUrl}publicaciones/`;
-    //ahorita acabo
-    return this.httpClient.post<Nota>(url, nota, httpOptions).pipe();
-    //return this.httpClient.get(url).toPromise();
+    return this.httpClient.post(url, nota, httpOptions).toPromise();
   }
 
-  editNota(nota: Nota): Observable<Nota> {
-    let url = `${environment.apiUrl}publicaciones/`+nota.id;
-    return this.httpClient.put<Nota>(url, nota, httpOptions)
-    .pipe();
+  editNota(nota: Nota): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
+    let url = `${environment.apiUrl}publicaciones/` + nota.id;
+    return this.httpClient.put<Nota>(url, nota, httpOptions).toPromise();
   }
 
-  getPeriodistas():Promise<any>  {
+  getPeriodistas(): Promise<any>  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
     const url = environment.apiUrl + 'periodistas';
     return this.httpClient.get(url).toPromise();
   }
 
-  deleteNota(id: number): Observable<{}>{
+  deleteNota(id: number): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'x-token': token
+      })
+    };
     const url = `${environment.apiUrl}publicaciones/${id}`;
-    return this.httpClient.delete(url, httpOptions).pipe();
+    return this.httpClient.delete(url, httpOptions).toPromise();
   }
 
 }

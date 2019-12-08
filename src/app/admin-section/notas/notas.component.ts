@@ -20,7 +20,7 @@ export class NotasComponent implements OnInit {
     this.getNotas();
   }
   getNotas(): void {
-    this.notasService.getNotas().subscribe(notas => (this.notas = notas));
+    this.notasService.getNotas().then(notas => this.notas = notas);
   }
   
   /*mostrarDetalle(desapDetalle) {
