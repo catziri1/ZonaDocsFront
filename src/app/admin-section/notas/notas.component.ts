@@ -9,20 +9,20 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./notas.component.css']
 })
 export class NotasComponent implements OnInit {
-  
-  notascompletas: any = [];
+
   notas: Nota[] = [];
 
-  constructor(private notaServicio: NotasService,
+  constructor(private notasService: NotasService,
               private router: Router,
               private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.notaServicio.getNotas().then((result)=> {
-      this.notascompletas = result;
-      this.notas = result;
-    });
+    this.getNotas();
   }
+  getNotas(): void {
+    this.notasService.getNotas().subscribe(notas => (this.notas = notas));
+  }
+  
   /*mostrarDetalle(desapDetalle) {
     this.router.navigate([])
   }*/

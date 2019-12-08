@@ -55,3 +55,8 @@ input[type='text']{
     font-family: 'Averia Sans Serif';
     font-size: 30px;
 }
+
+.notas{
+    display: flex;
+    flex-wrap: wrap;
+}

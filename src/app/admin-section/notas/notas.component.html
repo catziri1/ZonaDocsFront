@@ -9,7 +9,7 @@
         </div>
 
         <div class="input-container">
-            <i class="fa fa-search icon"></i>
+            <i class="fa fa-search icon w3-large"></i>
             <div class="espacio"></div>
             <input height = 200px, class="input-field" type="text" placeholder="Categoria o nota" name="psw">
         </div>
@@ -17,14 +17,16 @@
         <div class="input-container">
             <i class="fa fa-calendar icon"></i>
             <div class="espacio"></div>
-            <input type="text" name="fname" placeholder="DD/MM/YYYY" class="field_fecha">
+            <input height = 200px, type="text" name="fname" placeholder="DD/MM/YYYY" class="field_fecha">
         </div>
         <br>
-        <div class="nota" *ngFor="let nota of notas" routerLink="/notas/{{nota.id}}">
-            <div class="imagen">
-                <img src="https://aristeguinoticias.com/wp-content/uploads/2019/12/centro-de-rehabilitacion-internos-anexo-irapuato-guanajuato-04122019-600x274.jpg">
-            </div>
-            <div class="titulo">{{nota.titulo}}</div>
+        <div class="notas">
+            <app-nota-card *ngFor="let n of notas"
+                            [nota]="n"
+                            (mostrarDetalles)="mostrarDetalle($event)"
+                            (editarNota)="editar($event)">
+            </app-nota-card>
         </div>
+
     </div>
 </div>

@@ -50,7 +50,7 @@ export class EditarNotaComponent implements OnInit {
   }
 
   getCategorias() {
-    this.notasService.getCategoriasPublicion().then(response => {
+    this.notasService.getCategoriasPublicacion().subscribe(response => {
       console.log('Response: ', response);
       this.categorias = response;
     });
