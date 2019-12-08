@@ -17,13 +17,13 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleLoginClick(){
+  handleLoginClick() {
     this.loginService.login(this.email, this.password).then((result) => {
-      if(result.auth){
+      if (result.auth) {
         this.wrongLogin = false;
         this.cookieService.set('token', result.token);
         this.router.navigate(['/admin/notas']);
-      }else{
+      } else {
         this.wrongLogin = true;
       }
     });

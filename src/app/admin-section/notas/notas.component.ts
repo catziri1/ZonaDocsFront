@@ -11,14 +11,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class NotasComponent implements OnInit {
   
   notascompletas: any = [];
-  notas:Nota[] = [];
+  notas: Nota[] = [];
 
   constructor(private notaServicio: NotasService,
               private router: Router,
               private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.notaServicio.getNotas().then((result)=>{
+    this.notaServicio.getNotas().then((result)=> {
       this.notascompletas = result;
       this.notas = result;
     });
