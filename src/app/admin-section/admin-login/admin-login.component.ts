@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,19 +8,20 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-  email: string;
-  password: string;
+  emailInput: string = "";
+  passwordInput: string = "";
   wrongLogin: boolean = false;
-  constructor(private loginService: LoginService, private cookieService: CookieService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  handleLoginClick() {
-    this.loginService.login(this.email, this.password).then((result) => {
-      if (result.auth) {
+  handleLoginClick(){
+    this.wrongLogin = false;
+    this.loginService.login(this.emailInput, this.passwordInput).then((result) => {
+      if(result.auth){
         this.wrongLogin = false;
-        this.cookieService.set('token', result.token);
+        localStorage.setItem("token", result.token);
         this.router.navigate(['/admin/notas']);
       } else {
         this.wrongLogin = true;

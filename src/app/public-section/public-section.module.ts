@@ -4,11 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
+import { NotasComponent } from './notas/notas.component';
+
 
 const publicRoutes: Routes = [
   {path: '', component: IndexComponent, pathMatch: 'full'},
-  {path: '/notas/:id', component: NotFoundComponent},
+  {path: 'notas/:id', component: NotasComponent},
   {path: '**', component: NotFoundComponent}
+
 ];
 
 @NgModule({
@@ -17,6 +20,6 @@ const publicRoutes: Routes = [
     CommonModule
   ],
   exports: [RouterModule],
-  declarations: [NotFoundComponent, IndexComponent, HeaderComponent]
+  declarations: [NotFoundComponent, IndexComponent, HeaderComponent, NotasComponent]
 })
 export class PublicSectionModule { }
