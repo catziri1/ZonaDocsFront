@@ -17,6 +17,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
   handleLoginClick(){
+    this.wrongLogin = false;
     this.loginService.login(this.emailInput, this.passwordInput).then((result) => {
       if(result.auth){
         this.wrongLogin = false;
