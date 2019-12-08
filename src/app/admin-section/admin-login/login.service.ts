@@ -10,7 +10,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   login(email, password):Promise<any>{
-  const httpOptions = {
+    const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })

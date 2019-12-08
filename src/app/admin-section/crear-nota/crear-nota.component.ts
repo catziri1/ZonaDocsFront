@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NotasService } from '../notas.service';
 import { Categoria, Nota } from '../nota';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -23,10 +23,7 @@ export class CrearNotaComponent implements OnInit {
   };
 
 
-  constructor(    
-    private notasService:NotasService,
-    private formBuilder: FormBuilder
-    ) { }
+  constructor(private notasService:NotasService){}
 
   ngOnInit() {
     this.getCategoriasPublicion();

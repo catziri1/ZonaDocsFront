@@ -5,11 +5,11 @@
         <div *ngIf="wrongLogin">Email o contraseña incorrectos</div>
         <div class="row">
             <div class="title">Email</div>
-            <input type="text">
+            <input type="text" [(ngModel)]="emailInput">
         </div>
         <div class="row">
             <div class="title">Password</div>
-            <input type="text">
+            <input type="text" [(ngModel)]="passwordInput">
         </div>
         <div class="row">
             <div class="btn" (click)="handleLoginClick()">Ingresar</div>
