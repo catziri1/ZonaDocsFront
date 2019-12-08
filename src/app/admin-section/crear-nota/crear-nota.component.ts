@@ -30,8 +30,7 @@ export class CrearNotaComponent implements OnInit {
   }
 
   getCategoriasPublicion() {
-    this.notasService.getCategoriasPublicacion().subscribe(response => {
-      console.log('Response: ', response);
+    this.notasService.getCategoriasPublicacion().then(response => {
       this.categorias = response;
     });
   }
