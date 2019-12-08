@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { NotasService } from '../notas.service';
 import { Categoria, Nota } from '../nota';
-import {FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-nota',
@@ -30,7 +30,7 @@ export class CrearNotaComponent implements OnInit {
   }
 
   getCategoriasPublicion() {
-    this.notasService.getCategoriasPublicion().then(response => {
+    this.notasService.getCategoriasPublicacion().subscribe(response => {
       console.log('Response: ', response);
       this.categorias = response;
     });

@@ -22,7 +22,7 @@ export class AdminLoginComponent implements OnInit {
         this.wrongLogin = false;
         localStorage.setItem("token", result.token);
         this.router.navigate(['/admin/notas']);
-      }else{
+      } else {
         this.wrongLogin = true;
       }
     });
