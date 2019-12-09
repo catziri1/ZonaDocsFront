@@ -11,3 +11,12 @@
 .header > .logo > img{
     height: 70px;
 }
+
+.header > .menu > .option{
+    color: #fff;
+    cursor:pointer;
+}
+.header > .menu{
+    align-items: center;
+    display: flex;
+}
