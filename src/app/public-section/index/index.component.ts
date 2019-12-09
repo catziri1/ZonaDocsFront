@@ -19,7 +19,6 @@ export class IndexComponent implements OnInit {
   constructor(private notasService:NotasService, private categoriasService: CategoriaService) {}
   
   ngOnInit() {
-    this.promises.push(new Promise((resolve, reject) => {
       this.categoriasService.getCategorias().then((result)=>{
         this.categorias = result;
         this.categorias.forEach((element) => {
@@ -31,12 +30,10 @@ export class IndexComponent implements OnInit {
             });
           }));
         });
-        resolve();
+        Promise.all(this.promises).then((result)=> {
+          this.loading = false;
+        });
       });
-    }));
-    Promise.all(this.promises).then((result)=> {
-      this.loading = false;
-    });
   }
 
 }

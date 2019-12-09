@@ -23,10 +23,12 @@
     box-sizing: border-box;
     border-radius: 2px;
     overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #d2d2d2;
 }
 .notasCategoria > .notas > .nota > .content{
     padding: 10px;
-    background-color: #F1EFEF;
+    background-color: #e6e6e6;
 }
 .notasCategoria > .notas > .nota > .content > .firstRow{
     display: flex;
