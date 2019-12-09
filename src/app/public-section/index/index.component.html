@@ -3,11 +3,17 @@
     <div *ngFor="let categoria of categorias; let i = index" class="notasCategoria">
         <div class="titulo">{{categoria.nombre}}</div>
         <div class="notas">
-            <div class="nota" *ngFor="let nota of notas[i]; let j = index" routerLink="/notas/{{nota.id}}">
+            <div class="nota" *ngFor="let nota of notas[categoria.id]" routerLink="/notas/{{nota.id}}">
                 <div class="imagen">
-                    <img src="https://aristeguinoticias.com/wp-content/uploads/2019/12/centro-de-rehabilitacion-internos-anexo-irapuato-guanajuato-04122019-600x274.jpg">
+                    <img src={{nota.imagen}}>
                 </div>
-                <div class="titulo">{{nota.titulo}}</div>
+                <div class="content">
+                    <div class="firstRow">
+                        <div class="fecha">{{nota.fecha.substring(0, 10)}}</div>
+                        <div class="categoria">{{nota.categoria}}</div>
+                    </div>
+                    <div class="titulo">{{nota.titulo}}</div>
+                </div>  
             </div>
         </div>
     </div>

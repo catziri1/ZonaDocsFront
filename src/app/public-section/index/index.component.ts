@@ -22,9 +22,11 @@ export class IndexComponent implements OnInit {
     this.categorias.forEach((element) => {
       this.notasService.getNotasByCategoria(element.id).then((result) => {
         let notas: Nota[] = result;
-        this.notas.push(notas);
+        console.log(this.notas);
+        this.notas[element.id] = notas;
       });
     });
+    console.log(this.notas[0]);
    });
 
   }

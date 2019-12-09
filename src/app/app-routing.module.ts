@@ -6,7 +6,7 @@ import { AdminSectionModule } from '../app/admin-section/admin-section.module';
 
 const routes: Routes = [
   {path: 'admin', loadChildren: () => AdminSectionModule},
-  {path: '**', loadChildren: () => PublicSectionModule}
+  {path: '', loadChildren: () => PublicSectionModule}
 ];
 
 @NgModule({
