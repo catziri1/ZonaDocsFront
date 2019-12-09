@@ -1,10 +1,68 @@
-body {
+div {
     margin: 0; 
     padding: 0; 
     min-width: 100%!important;
 }
+
+.tabla1 {
+    width:"100%"; 
+    background-color:"#DCDBD9" ;
+    border:"0" ;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+.tdPad1 {
+    padding: 0 0 0 3px;
+}
+.tdPad2 {
+    padding: 5px 0 0 0;
+}
+.tdPad3 {
+    padding: 20px 0 0 0;
+}
+.tabla2 {
+    background-color:"#ffffff";
+    text-align:"center";
+    border-spacing: 0px;
+    border-collapse: separate;
+    border:"0";
+}
+.td1 {
+    background-color:"#ffffff";
+}
+
+.tabla3 {
+    text-align:"left";
+    border:"0";
+    border-spacing: 0px;
+    border-collapse: separate;
+    width: 100%;
+}
+.tabla4 {
+    width:"100%";
+     border:"0";
+     border-spacing: 0px;
+     border-collapse: separate;
+}
 img {
+    width:"100%";
+    border:"0"; 
     height: auto;
+}
+
+.tabla5 {
+    background-color:"#F5F5F5";
+    border:"0";
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+.td2{
+    background-color:"#44525f";
+}
+.td3 {
+    width:"37";
+    text-align: center; 
+    padding: 0 10px 0 10px;
 }
 .content {
     width: 100%; 
@@ -74,3 +132,25 @@ img {
     font-family: PT Serif; 
     text-align: right;
 }
+@media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
+    div[dif] .hide {
+        display: none!important;
+    }
+    div[dif] .buttonwrapper {
+        background-color: transparent!important;
+    }
+    div[dif] .button {
+        padding: 0px!important;
+    }
+    div[dif] .button a {
+        background-color: #F5F5F5; 
+        padding: 15px 15px 13px!important;
+    }
+    div[dif] .unsubscribe {display: block;
+         margin-top: 20px; 
+         padding: 10px 50px;
+          background: #2f3942;
+         border-radius: 5px; 
+         text-decoration: none!important; 
+         font-weight: bold;}
+    }
