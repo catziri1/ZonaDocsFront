@@ -15,12 +15,12 @@
 }
 
 input[type='text']{
-    font-size:20px;
+    font-size:16px;
 }
 
 ::-webkit-input-placeholder {
     font-family: 'Lora', italic;
-    font-size: 20px;
+    font-size: 16px;
   }
 
 .card{
@@ -39,16 +39,13 @@ input[type='text']{
     padding: 10px;
 }
 
-.field_fecha{
-    padding: 5px
-}
 
 .espacio {
     width: 5px
 }
 
 .notastitulo {
-    font-family: 'Averia Sans Serif';
+    font-family: 'Lora', italic;
     font-size: 30px;
     display: flex;
     
@@ -63,18 +60,40 @@ input[type='text']{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.btn {
-    background-color: DodgerBlue; /* Blue background */
+button {
     border: none; /* Remove borders */
     color: white; /* White text */
     padding: 12px 16px; /* Some padding */
-    font-size: 18px; /* Set a font size */
-    font-family: 'Averia Sans Serif';
+    font-family: 'Lora', italic;
+    font-size: 16px;
     cursor: pointer; /* Mouse pointer on hover */
     height: 50px;
   }
-  
+  .btn{
+    background-color: #235152; /* Blue background */
+  }
   /* Darker background on mouse-over */
   .btn:hover {
-    background-color: RoyalBlue;
+    background-color: #34797B;
+  }
+
+  .submitbtn:hover{
+    background-color: #395E32; /* Blue background */
+  }
+  .submitbtn{
+    background-color: #253C20;
+  }
+
+  select{
+    padding: 12px 16px; /* Some padding */
+    font-family: 'Lora', italic;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  i{
+      font-size: 16px;
+  }
+  .button-container{
+      display: flex;
+      justify-content: center;
   }

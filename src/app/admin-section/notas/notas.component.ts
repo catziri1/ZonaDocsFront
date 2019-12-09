@@ -15,6 +15,8 @@ export class NotasComponent implements OnInit {
   periodistas: Periodista[];
   categorias: Categoria[];
   notas: Nota[];
+  nombre: string;
+  fecha: string;
 
   constructor(private notasService: NotasService,
               private router: Router,
@@ -22,7 +24,9 @@ export class NotasComponent implements OnInit {
               private formBuilder:FormBuilder) {
                 this.form = this.formBuilder.group({
                   categorias:[''],
-                  periodistas:['']
+                  periodistas:[''],
+                  nombre:'',
+                  fecha:''
                 });
 
               }
@@ -39,7 +43,6 @@ export class NotasComponent implements OnInit {
   submit(){
     console.log(this.form.value);
   }
-
   getCategorias(){
     return this.notasService.getCategoriasPublicacion().then(c => this.categorias = c);
   }
