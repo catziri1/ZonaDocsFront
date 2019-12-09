@@ -71,3 +71,15 @@ button{
 .fotos{
     display:none;
 }
+
+.btnback {
+    margin: 30px;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 20px;
+    font-size: 18px;
+    background: #033359;
+    display: flex;
+    justify-content: flex-end;
+}

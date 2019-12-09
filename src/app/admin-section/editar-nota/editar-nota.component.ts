@@ -4,8 +4,7 @@ import { NotasService } from '../notas.service';
 import {ActivatedRoute} from '@angular/router';
 import { Categoria, Nota } from '../nota';
 import { Periodista } from '../periodista';
-
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editar-nota',
@@ -29,7 +28,8 @@ export class EditarNotaComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private notasService:NotasService) {
+    private notasService:NotasService,
+    private location: Location) {
     this.activatedRoute.params.subscribe(parameters => {
       this.notaid = parameters.id;
     })
@@ -65,6 +65,10 @@ export class EditarNotaComponent implements OnInit {
 
   editarNota(){
 
+  }
+
+  goBack(){
+    this.location.back();
   }
 
   onSubmit(){
