@@ -13,22 +13,30 @@ import { CategoriaService } from '../categoria.service';
 export class IndexComponent implements OnInit {
   categorias: Categoria[];
   notas: Nota[][] = [];
+  loading: boolean = true;
+  promises: Promise<any>[] = [];
   
   constructor(private notasService:NotasService, private categoriasService: CategoriaService) {}
   
   ngOnInit() {
-   this.categoriasService.getCategorias().then((result)=>{
-    this.categorias = result;
-    this.categorias.forEach((element) => {
-      this.notasService.getNotasByCategoria(element.id).then((result) => {
-        let notas: Nota[] = result;
-        console.log(this.notas);
-        this.notas[element.id] = notas;
+    this.promises.push(new Promise((resolve, reject) => {
+      this.categoriasService.getCategorias().then((result)=>{
+        this.categorias = result;
+        this.categorias.forEach((element) => {
+          this.promises.push(new Promise((resolve, reject) => {
+            this.notasService.getNotasByCategoria(element.id).then((result) => {
+              let notas: Nota[] = result;
+              this.notas[element.id] = notas;
+              resolve();
+            });
+          }));
+        });
+        resolve();
       });
+    }));
+    Promise.all(this.promises).then((result)=> {
+      this.loading = false;
     });
-    console.log(this.notas[0]);
-   });
-
   }
 
 }

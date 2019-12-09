@@ -1,20 +1,25 @@
 <app-header></app-header>
 <div class="pageContent">
-    <div *ngFor="let categoria of categorias; let i = index" class="notasCategoria">
-        <div class="titulo">{{categoria.nombre}}</div>
-        <div class="notas">
-            <div class="nota" *ngFor="let nota of notas[categoria.id]" routerLink="/notas/{{nota.id}}">
-                <div class="imagen">
-                    <img src={{nota.imagen}}>
-                </div>
-                <div class="content">
-                    <div class="firstRow">
-                        <div class="fecha">{{nota.fecha.substring(0, 10)}}</div>
-                        <div class="categoria">{{nota.categoria}}</div>
+    <div class="contentPage" *ngIf="!loading">
+        <div *ngFor="let categoria of categorias; let i = index" class="notasCategoria">
+            <div class="titulo">{{categoria.nombre}}</div>
+            <div class="notas">
+                <div class="nota" *ngFor="let nota of notas[categoria.id]" routerLink="/notas/{{nota.id}}">
+                    <div class="imagen">
+                        <img src={{nota.imagen}}>
                     </div>
-                    <div class="titulo">{{nota.titulo}}</div>
-                </div>  
+                    <div class="content">
+                        <div class="firstRow">
+                            <div class="fecha">{{nota.fecha.substring(0, 10)}}</div>
+                            <div class="categoria">{{nota.categoria}}</div>
+                        </div>
+                        <div class="titulo">{{nota.titulo}}</div>
+                    </div>  
+                </div>
             </div>
         </div>
+    </div>
+    <div class="loadingPage" *ngIf="loading">
+        <i class="fa fa-spinner fa-spin"></i>
     </div>
 </div>

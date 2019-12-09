@@ -49,3 +49,12 @@
     max-width: 100%;
     max-height: 150px;
 }
+.loadingPage{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height:calc(100vh - 164px);
+}
+.loadingPage > i{
+    font-size: 40px;
+}
