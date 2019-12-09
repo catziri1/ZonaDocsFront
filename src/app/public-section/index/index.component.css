@@ -21,10 +21,26 @@
     margin-right: 20px;
     margin-bottom: 20px;
     box-sizing: border-box;
+    border-radius: 2px;
+    overflow: hidden;
 }
-.notasCategoria > .notas > .nota > .titulo{
+.notasCategoria > .notas > .nota > .content{
     padding: 10px;
     background-color: #F1EFEF;
+}
+.notasCategoria > .notas > .nota > .content > .firstRow{
+    display: flex;
+}
+.notasCategoria > .notas > .nota > .content > .firstRow > .fecha{
+    flex: 1;
+    font-size: 14px;
+    color: #9a9a9a;
+}
+.notasCategoria > .notas > .nota > .content > .firstRow > .categoria{
+    color: #720500;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
 }
 .notasCategoria > .notas > .nota > .imagen{
     display: flex;
