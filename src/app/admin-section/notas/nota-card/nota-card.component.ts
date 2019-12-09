@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Nota } from '../../nota';
-
+import { ActivatedRoute } from '@angular/router';
+import { NotasService } from '../../notas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nota-card',
@@ -9,21 +11,29 @@ import { Nota } from '../../nota';
 })
 export class NotaCardComponent implements OnInit {
   @Input() nota: Nota;
-  @Output() mostrarDetalles = new EventEmitter;
-  @Output() editarNota = new EventEmitter;
 
-
-  constructor( ) { }
+  constructor(private route: ActivatedRoute,
+    private notasService: NotasService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.getNota();
   }
-  mostrarDetalle(){
-    this.mostrarDetalles.emit(this.nota);
+  getNota(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.notasService.getNotaDetail(this.nota.id);
+
   }
-
-  editar(){
-    this.editarNota.emit(this.nota);
+  mostrarDetalle() {
+    console.log("Mostrar componente de la nota admin")
   }
-
-
+  editarNota() {
+        //redireccionar a la pagina de cynthia
+      console.log("mostrar pagina de cynthia");
+      this.router.navigateByUrl('/admin/notas/'+this.nota.id+'/editar');
+  }
+  eliminarNota(){
+    console.log("eliminar nota, llamar delete");
+    this.notasService.deleteNota(this.nota.id);
+  }
 }

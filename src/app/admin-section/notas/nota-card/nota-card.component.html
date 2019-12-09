@@ -8,6 +8,11 @@
             <div class="body-card">
                 {{nota.entrada}}
             </div>
+            <div class="btns"> 
+                <button class="btn btnedit" (click)="editarNota()"><i class="fa fa-edit"></i></button>
+                <button class="btn btnreview" (click)="mostrarDetalle()"><i class="fa fa-eye"></i></button>      
+                <button class="btn btndelete" (click)="eliminarNota()"><i class="fa fa-trash"></i></button>
+            </div>
         </div>
     </div>
 </div>
