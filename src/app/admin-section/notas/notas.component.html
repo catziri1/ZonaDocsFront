@@ -30,22 +30,25 @@
                 <div class="input-container">
                     <i class="fa fa-search"></i>
                     <div class="espacio"></div>
-                    <input class="input-field" type="text" placeholder="Nombre de la nota"
-                        formControlName="nombre" name="psw">
+                    <input class="input-field" type="text" placeholder="Nombre de la nota" formControlName="nombre"
+                        name="psw">
                 </div>
 
-                <div class="input-container">
+                <div class="input-container fechas-container">
                     <i class="fa fa-calendar"></i>
                     <div class="espacio"></div>
-                    <input type="text" name="fname" placeholder="DD/MM/YYYY" formControlName="fecha"
+                    <label for="fechaInicio">Del </label>
+                    <input type="text" name="fname" placeholder="DD/MM/YYYY" formControlName="fechaInicio"
+                        class="field_fecha">
+                    <label for="fechaFin"> al </label>
+                    <input type="text" name="fname" placeholder="DD/MM/YYYY" formControlName="fechaFin"
                         class="field_fecha">
                 </div>
                 <div class="input-container button-container">
                     <button class="submitbtn"><i class="fa fa-search"></i>Buscar</button>
                 </div>
-                
             </form>
-            <button class="btn btnadd"><i class="fa fa-plus-circle"></i> Crear nueva nota</button>
+            <button class="btn btnadd" (click)="crearNota()"><i class="fa fa-plus-circle"></i> Crear nueva nota</button>
         </div>
         <br>
         <div class="notas">

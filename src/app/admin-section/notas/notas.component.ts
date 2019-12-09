@@ -16,7 +16,8 @@ export class NotasComponent implements OnInit {
   categorias: Categoria[];
   notas: Nota[];
   nombre: string;
-  fecha: string;
+  fechaInicio: string;
+  fechaFin:string;
 
   constructor(private notasService: NotasService,
               private router: Router,
@@ -26,7 +27,8 @@ export class NotasComponent implements OnInit {
                   categorias:[''],
                   periodistas:[''],
                   nombre:'',
-                  fecha:''
+                  fechaInicio:'',
+                  fechaFin:''
                 });
 
               }
@@ -40,9 +42,7 @@ export class NotasComponent implements OnInit {
   getNotas(): void {
     this.notasService.getNotas().then(notas => this.notas = notas);
   }
-  submit(){
-    console.log(this.form.value);
-  }
+
   getCategorias(){
     return this.notasService.getCategoriasPublicacion().then(c => this.categorias = c);
   }
@@ -51,6 +51,16 @@ export class NotasComponent implements OnInit {
     return this.notasService.getPeriodistas().then(p => this.periodistas = p);
   }
 
+  crearNota(){
+    this.router.navigateByUrl('/admin/notas/nueva');
+  }
+  submit() {
+    this.notasService.filterNota(this.form.value.fechaInicio,
+                                 this.form.value.fechaFin,
+                                 this.form.value.periodistas,
+                                 this.form.value.categorias).then(n => this.notas = n);
+    console.log(this.form.value);
+  }
   /*mostrarDetalle(desapDetalle) {
     this.router.navigate([])
   }*/

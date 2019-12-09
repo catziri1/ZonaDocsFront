@@ -29,7 +29,7 @@ export class NotaCardComponent implements OnInit {
   }
   editarNota() {
         //redireccionar a la pagina de cynthia
-      console.log("mostrar pagina de cynthia");
+      console.log("mostrar pagina de editar");
       this.router.navigateByUrl('/admin/notas/'+this.nota.id+'/editar');
   }
   eliminarNota(){
