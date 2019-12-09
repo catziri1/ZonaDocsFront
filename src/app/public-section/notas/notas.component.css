@@ -1,0 +1,156 @@
+div {
+    margin: 0; 
+    padding: 0; 
+    min-width: 100%!important;
+}
+
+.tabla1 {
+    width:"100%"; 
+    background-color:"#DCDBD9" ;
+    border:"0" ;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+.tdPad1 {
+    padding: 0 0 0 3px;
+}
+.tdPad2 {
+    padding: 5px 0 0 0;
+}
+.tdPad3 {
+    padding: 20px 0 0 0;
+}
+.tabla2 {
+    background-color:"#ffffff";
+    text-align:"center";
+    border-spacing: 0px;
+    border-collapse: separate;
+    border:"0";
+}
+.td1 {
+    background-color:"#ffffff";
+}
+
+.tabla3 {
+    text-align:"left";
+    border:"0";
+    border-spacing: 0px;
+    border-collapse: separate;
+    width: 100%;
+}
+.tabla4 {
+    width:"100%";
+     border:"0";
+     border-spacing: 0px;
+     border-collapse: separate;
+}
+img {
+    width:"100%";
+    border:"0"; 
+    height: auto;
+}
+
+.tabla5 {
+    background-color:"#F5F5F5";
+    border:"0";
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+.td2{
+    background-color:"#44525f";
+}
+.td3 {
+    width:"37";
+    text-align: center; 
+    padding: 0 10px 0 10px;
+}
+.content {
+    width: 100%; 
+    max-width: 600px;
+}
+.header {
+    padding: 40px 30px 20px 30px;
+}
+.innerpadding {
+    padding: 30px 30px 30px 30px;
+}
+.borderbottom {
+    border-bottom: 4px solid #9BB2CF;
+}
+.subhead {
+    font-size: 15px; 
+    color: #720500; 
+    font-family:  Averia Serif Libre; 
+    letter-spacing: 10px;
+}
+.h1, .h2, .bodycopy {
+    color: #153643; 
+    font-family: Averia Serif Libre;
+}
+.h1 {
+    font-size: 33px; 
+    line-height: 38px; 
+    font-weight: bold;
+}
+.h2 {
+    padding: 0 0 15px 0; 
+    font-size: 24px; 
+    line-height: 28px; 
+    font-weight: bold;
+}
+.bodycopy {
+    font-size: 16px; 
+    line-height: 22px; 
+    text-align: justify;
+}
+.button {
+    text-align: right; 
+    font-size: 8px; 
+    font-family:  PT Serif; 
+    font-weight: bold;
+    padding: 0 30px 0 30px; 
+    padding-right: 500;
+}
+.button a {
+    color: #ffffff; 
+    text-decoration: none;
+}
+.footer {
+    padding: 20px 30px 15px 15px;
+}
+.footercopy {
+    font-family:  PT Serif; 
+    font-size: 14px; 
+    color: #ffffff;
+}
+.footercopy a {
+    color: #ffffff; 
+    text-decoration: underline;
+}
+.pieImage { 
+    font-size: 8px; 
+    font-family: PT Serif; 
+    text-align: right;
+}
+@media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
+    div[dif] .hide {
+        display: none!important;
+    }
+    div[dif] .buttonwrapper {
+        background-color: transparent!important;
+    }
+    div[dif] .button {
+        padding: 0px!important;
+    }
+    div[dif] .button a {
+        background-color: #F5F5F5; 
+        padding: 15px 15px 13px!important;
+    }
+    div[dif] .unsubscribe {display: block;
+         margin-top: 20px; 
+         padding: 10px 50px;
+          background: #2f3942;
+         border-radius: 5px; 
+         text-decoration: none!important; 
+         font-weight: bold;}
+    }

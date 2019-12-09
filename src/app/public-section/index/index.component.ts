@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
+import { Nota } from '../nota';
+import { NotasService } from '../notas.service';
+import { Categoria } from '../categoria';
+import { CategoriaService } from '../categoria.service';
 
 @Component({
   selector: 'app-index',
@@ -7,10 +11,22 @@ import { HeaderComponent } from '../header/header.component';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
-  constructor() { }
-
+  categorias: Categoria[];
+  notas: Nota[][] = [];
+  
+  constructor(private notasService:NotasService, private categoriasService: CategoriaService) {}
+  
   ngOnInit() {
+   this.categoriasService.getCategorias().then((result)=>{
+    this.categorias = result;
+    this.categorias.forEach((element) => {
+      this.notasService.getNotasByCategoria(element.id).then((result) => {
+        let notas: Nota[] = result;
+        this.notas.push(notas);
+      });
+    });
+   });
+
   }
 
 }

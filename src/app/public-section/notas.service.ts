@@ -11,6 +11,7 @@ export class NotasService {
   constructor(private httpClient:HttpClient) { 
   }
 
-  /*getPublicacionesByCategoria():Promise<any>{
-  }*/
+  getNotasByCategoria(categoriaId: number):Promise<any>{
+    return this.httpClient.get(environment.apiUrl+"public/publicaciones?categoriaId="+categoriaId).toPromise();
+  }
 }

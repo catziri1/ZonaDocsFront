@@ -1,1 +1,17 @@
-<p>admin-login works!</p>
+<div class="aligner">
+    <div class="loginForm">
+        <div class="title">Login</div>
+        <div class="loginAlert" *ngIf="wrongLogin">Email o contraseña incorrectos</div>
+        <div class="row">
+            <div class="title">Email</div>
+            <input type="text" [(ngModel)]="emailInput">
+        </div>
+        <div class="row">
+            <div class="title">Password</div>
+            <input type="password" [(ngModel)]="passwordInput">
+        </div>
+        <div class="row">
+            <div class="btn" (click)="handleLoginClick()">Ingresar</div>
+        </div>
+    </div>
+</div>

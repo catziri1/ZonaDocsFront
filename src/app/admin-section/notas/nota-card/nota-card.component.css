@@ -1,5 +1,10 @@
 .card{
-    width: 50px;
+    width: 300px;
+    margin: 10px;
+    background-color: #F1EFEF;
 
+}
+.text-card{
+    padding: 10px;
 }
 

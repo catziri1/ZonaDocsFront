@@ -17,9 +17,8 @@
     flex-wrap: wrap;
 }
 .notasCategoria > .notas > .nota{
-    max-width: 25%;
-    max-width: 25%;
-    padding-right: 20px;
+    width: 300px;
+    margin-right: 20px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
